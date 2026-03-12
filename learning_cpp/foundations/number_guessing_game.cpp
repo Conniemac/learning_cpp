@@ -7,9 +7,9 @@
 
 using namespace std;
 
-bool is_digits(string str){
+bool is_digits(string* str){
 
-	for (char character : str){
+	for (char character : *str){
 		if (!isdigit(character)){
 			return false;
 		}
@@ -38,7 +38,7 @@ int main(){
 
 		cout << "Enter a integer between 0 and 100: ";
 		getline(cin, user_input);
-		if (is_digits(user_input)){
+		if (is_digits(&user_input)){
 			guess = stoi(user_input);
 		}
 		else{
